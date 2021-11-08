@@ -1,0 +1,77 @@
+﻿@using OgnreciNotMVC.Models.EntityFramework @*// burada yine Models içinde Entity Framework Klasörüne ulaşmak için yazdık*@
+
+@model  List<Tbl_Dersler> 
+    @*burada bir liste oluşturduk ve bu listede şunu tutacak neyi çekeceğim ben tbl_dersler'i çekicem bu modeli birazdan aşağdıda ilişkilendirdiğimiz alanda k*ullanıcaz*@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<table class="table table-bordered">
+    <tr>  tr(Table Row) demek bir satır demek biz tablonun içinde bir satır oluşturduk
+        <th> th(Table Head) de sütun demek bu satırın içinde de bir sütun oluşturduk
+        DERS ID
+        </th> Buradaki isim ile Veritabanındaki isim aynı olmak zorunda değil çünkü bu kullanıcıya gözükecek alan
+        <th>DERS ADI</th>
+    <th>İŞLEMLER</th>
+        <tbody>  @*tbody ile Tablomunuzun içeriğini oluşturucaz yine tablo içeriğimize bi tane satır oluşturucaz ama satır oluşturmadan önce foreach döngümüzü yazalım
+
+            Foreach döngümüz 4 parametre (Değer) alıyordu 1.si değişken türü 2.si isim 3.sü in nerenin içinden Alacak Model içinden 
+                    |
+                    V
+            Buradaki Model(objesi) kısmı yukarda Liste oluştuduğumuz ve listeye Tbl Dersleri Atadığımız kısımdan geldi
+                Buradaki Model Kısmı Tbl_dersleri üzerine aldı ve model içerisindeki drs adlı değişkende model içerisindeki değişkenleri çekti Bu model nereye bağlı tbl_derslere bağlı index.chtml de buradaki yani DefaultContollere bağlı
+
+            @foreach(var drs in Model)              
+            {
+                <tr>
+                    <td>@drs.DERSID</td>
+                    <td>@drs.DERSAD</td>
+                    <td><a href="/Default/Sil/@drs.DERSID" class="btn btn-danger">Sil</a>
+                    <a href="/Default/Guncelle/@drs.DERSID" class="btn ">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </tr>
+</table> *@
+
+<div class="table100 ver2 m-b-110">
+    <div class="table100-head">
+        <table>
+            <thead>
+                <tr class="row100 head">
+                    <th class="cell100 column1" style="text-align:center">DERS ID</th>
+                    <th class="cell100 column2">DERS ADI</th>
+                    <th class="cell100 column3">ISLEMLER</th>
+                </tr>
+
+            </thead>
+        </table>
+    </div>
+
+    <div class="table100-body js-pscroll">
+        <table>
+
+            <tbody>
+                @foreach (var drs in Model)
+                {
+                    <tr class="row100 body">
+                        <td class="cell100 column1" style="text-align:center">@drs.DERSID</td>
+                        <td  class="cell100 column2">@drs.DERSAD</td>
+                        <td  class="cell100 column3">
+                            <a href="/Default/Sil/@drs.DERSID" class="btn btn-danger">Sil</a>
+                            <a href="/Default/DersGetir/@drs.DERSID" class="btn "style="color:#ffffff">Güncelle</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+<a href="/Default/YeniDers" class="btn btn-primary" style="margin-top:-155px">Yeni Ders Kaydı</a>
+
+

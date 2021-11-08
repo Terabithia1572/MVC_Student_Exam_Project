@@ -1,0 +1,90 @@
+﻿@using OgnreciNotMVC.Models.EntityFramework;
+@model List<Tbl_Notlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>NOT ID</th>
+        <th>DERS</th>
+        <th>ÖĞRENCİ</th>
+        <th>SINAV 1</th>
+        <th>SINAV 2</th>
+        <th>SINAV 3</th>
+        <th>PROJE</th>
+        <th>ORTALAMA</th>
+        <th>DURUM</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach(var not in Model)
+        {
+            <tr>
+                <td>@not.NOTID</td>
+                <td>@not.DERSID</td>
+                <td>@not.OGRID</td>
+                <td>@not.SINAV1</td>
+                <td>@not.SINAV2</td>
+                <td>@not.SINAV3</td>
+                <td>@not.PROJE</td>
+                <td>@not.ORTALAMA</td>
+                <td>@not.DURUM</td>
+                <td><a href="/Notlar/Guncelle/@not.NOTID" class="btn ">Güncelle</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>*@
+
+<div class="table100 ver2 m-b-110">
+    <div class="table100-head">
+        <table>
+            <thead>
+                <tr class="row100 head">
+                    <th class="cell100 column1" style="text-align:center">NOT ID</th>
+                    <th class="cell100 column2">DERS</th>
+                    <th class="cell100 column3">ÖĞRENCİ</th>
+                    <th class="cell100 column4">SINAV 1</th>
+                    <th class="cell100 column5">SINAV 2</th>
+                    <th class="cell100 column6">SINAV 3</th>
+                    <th class="cell100 column7">PROJE</th>
+                    <th class="cell100 column8">ORTALAMA</th>
+                    <th class="cell100 column9" >DURUM</th>
+                    <th class="cell100 column10">ISLEMLER</th>
+                </tr>
+
+            </thead>
+        </table>
+    </div>
+
+    <div class="table100-body js-pscroll">
+        <table>
+
+            <tbody>
+               @foreach (var not in Model)
+               {
+                <tr class="row100 body">
+                    <td  class="cell100 column1" style="text-align:center" >@not.NOTID</td>
+                    <td  class="cell100 column2" style="text-align:center" >@not.DERSID</td>
+                    <td  class="cell100 column3" style="text-align:center" >@not.OGRID</td>
+                    <td  class="cell100 column4" style="text-align:center" >@not.SINAV1</td>
+                    <td  class="cell100 column5" style="text-align:center">@not.SINAV2</td>
+                    <td  class="cell100 column6" style="text-align:center">@not.SINAV3</td>
+                    <td  class="cell100 column7"style="text-align:right" >@not.PROJE</td>
+                    <td  class="cell100 column8" style="text-align:right">@not.ORTALAMA</td>
+                    <td  class="cell100 column9" style="text-align:right">@not.DURUM</td>
+                    <td  class="cell100 column10" >
+                        <a href="/Notlar/NotGetir/@not.NOTID" class="btn " style="color:#ffffff">Güncelle</a>
+                    </td>
+                </tr>
+               }
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<a href="/Notlar/YeniSinav" class="btn btn-primary" style="margin-top:-155px">Yeni Sınav Girişi</a>
+

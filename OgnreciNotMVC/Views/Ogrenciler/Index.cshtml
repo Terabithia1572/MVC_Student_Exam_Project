@@ -1,0 +1,77 @@
+﻿@using OgnreciNotMVC.Models.EntityFramework;
+@model List<Tbl_Ogrenciler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<table class="table table-bordered">
+    <tr>
+        <td>ÖĞRENCİ ID</td>
+        <td>ADI</td>
+        <td>SOYADI</td>
+        <td>CİNSİYETİ</td>
+        <td>KULÜP</td>
+        <th>İŞLEMLER</th>
+    </tr>
+    <tbody>
+        @foreach (var ogr in Model)
+        {
+            <tr>
+                <td>@ogr.OGRENCIID</td>
+                <td>@ogr.OGRAD</td>
+                <td>@ogr.OGRSOYAD</td>
+                <td>@ogr.OGRCINSIYET</td>
+                <td>@ogr.OGRKULUP</td>
+                <td><a href="/Ogrenciler/Sil/@ogr.OGRENCIID" class="btn btn-danger">Sil</a>
+                <a href="/Ogrenciler/Guncelle/@ogr.OGRENCIID" class="btn">Güncelle</a></td>
+            </tr>
+        }
+       
+    </tbody>
+</table>*@
+
+<div class="table100 ver2 m-b-110">
+    <div class="table100-head">
+        <table>
+            <thead>
+                <tr class="row100 head">
+                    <th class="cell100 column1" style="text-align:center">OGRENCI ID</th>
+                    <th class="cell100 column2">ADI</th>
+                    <th class="cell100 column3"  style="text-align:center">SOYADI</th>
+                    <th class="cell100 column4">CINSIYETI</th>
+                    <th class="cell100 column5">KULÜP</th>
+                    <th class="cell100 column6">ISLEMLER</th>
+                </tr>
+
+            </thead>
+        </table>
+    </div>
+
+    <div class="table100-body js-pscroll">
+        <table>
+
+            <tbody>
+              @foreach (var ogr in Model)
+              {
+                    <tr class="row100 body">
+                        <td class="cell100 column1" style="text-align:center">@ogr.OGRENCIID</td>
+                        <td class="cell100 column2">@ogr.OGRAD</td>
+                        <td class="cell100 column3" style="text-align:center">@ogr.OGRSOYAD</td>
+                        <td class="cell100 column4">@ogr.OGRCINSIYET</td>
+                        <td class="cell100 column5">@ogr.Tbl_Kulupler.KULUPAD</td> @*Yabancıl anahtar olduğu için id yeribe kuluübün adını getirdik*@
+                        <td class="cell100 column6">
+                            <a href="/Ogrenciler/Sil/@ogr.OGRENCIID" class="btn btn-danger">SİL</a>
+                            <a href="/Ogrenciler/OgrenciGetir/@ogr.OGRENCIID" class="btn btn-Dark" style="margin-top:15px;color:#ffffff">Güncelle</a>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<a href="/Ogrenciler/YeniOgrenci" class="btn btn-primary" style="margin-top:-155px">Yeni Öğrenci Kaydı</a>
+

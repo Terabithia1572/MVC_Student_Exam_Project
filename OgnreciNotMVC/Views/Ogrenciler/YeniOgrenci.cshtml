@@ -1,0 +1,63 @@
+﻿@model OgnreciNotMVC.Models.EntityFramework.Tbl_Ogrenciler
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Adı</label>
+        <input type="text" class="form-control" name="OGRAD" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Soyadı</label>
+        <input type="text" class="form-control"  name="OGRSOYAD"/>
+    </div>
+    <div style="margin-top:10px">
+        <label>ÖĞRENCİ FOTO</label>
+        <input type="text" class="form-control" name="OGRFOTO" />
+    </div>
+    <div style="margin-top:10px">
+        <label>ÖĞRENCİ CİNSİYET</label>
+        <input type="text" class="form-control" name="OGRCINSIYET"/>
+    </div>
+    <div style="margin-top:10px">
+        <label>ÖĞRENCİ KULÜP</label>
+        @Html.DropDownListFor(m=>m.Tbl_Kulupler.KULUPID,(List<SelectListItem>)ViewBag.dgr,new {@class="form-control"})
+    </div>
+
+
+    @*<div style="margin-top:10px">
+        <label>Şehir Seçimi</label>
+    @*şimdi MVC'de toolbox yok ve bu yüzden biz drpdownlist kullanmamız için HTML HELPER devreye giriyor*@
+    @*DropDownList Toplam 4 tane parametre alıyor bu parametrelerden 1.si bu dropdown ismi*@
+    @*2.Parametremiz ise bu dropdownlist içinde gözükecek olan değerler*@
+    @*2.Parametre de bir dizi tanımladım ben dizi içine atacağım *@
+        @*@Html.DropDownList("Şehirler",new[] {
+       new SelectListItem() {Value="1",Text="Ankara"},*@ @*Buraya ben bi tane seçilecek öğe formatında bir değer oluşturdum*@
+       @*Burada Bizim new SelectList() {} 2 değer alıyor 1.değerimiz Value 2.Değerimiz ise Text Bu Neye Benziyor C#'daki Display ve Valumember'e benziyor aynı mantık*@
+       @*new SelectListItem() {Value="2",Text="İstanbul" },
+       new SelectListItem() {Value="3",Text="İzmir" },
+       new SelectListItem() {Value="4",Text="Van" }
+   },*@ @*buradaki virgül 3.parametremiz olacak*@
+       @*Buradaki parametre ise DropdownList'im başlagıncında o seçim kısmında ne gözüksün*@
+       @*@*"Şehir Seçiniz...",@*Burası İse Son Parametre 4.Parametremiz olacak*@
+                          @*Son Parametremiz ise bunun özelleştirilmesi*@
+       @*new {@class="form-control"}*@
+       @*)*@@*@
+
+    </div>
+
+    <div style="margin-top:10px">
+        @using (Html.BeginForm("CategoryChosen", "Home", FormMethod.Get)) //ttps://docs.microsoft.com/tr-tr/aspnet/mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
+    {
+            @Html.DropDownList("DersAd")
+    }
+        @Html.DropDownList("DersAd",null,"Ders Seçin",new {@class="form-control"})
+    </div>*@
+
+
+    <div style="margin-top:10px">
+     <button class="btn" >ÖĞRENCİ EKLE</button>
+    </div>
+</form>

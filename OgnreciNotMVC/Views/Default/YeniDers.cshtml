@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "YeniDers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Ders Adı</label>
+        @*Burada Çok ama Çok önemli bir nokta var şimdi bizim burda mvc de bir atama yapmamız lazım şimdi tetikleme başka yerde anlatıcaz *@
+        @*Şimdi Bu Form Her Yüklendiğinde bir tetikleme işlemi olacak ve bur form tetiklendiği zaman bu formun tetikledicisi nerde Yeni Ders() tetiklend.iğinde işte Yeni Ders() içindekiler gerçekleşsin*@
+        @*name kısmı alanmızdaki isim ile SQL'deki sütun ismi aynı olmalı çünkü bu değikenle oluşturulmuş bir değişkenimiz var*@
+        <input type="text"  class="form-control" name="DERSAD"/>
+    </div>
+    <div style="margin-top:10px"> @*Burada Margin Top 10 px dememizin sebebi yukarıdaki div ile aranda 10 px boşluk bırak anlamında yaptık*@
+        <button class="btn btn-success">Ders Ekle</button>
+    </div>
+</form>
+

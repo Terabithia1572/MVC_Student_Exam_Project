@@ -1,0 +1,19 @@
+﻿@model OgnreciNotMVC.Models.EntityFramework.Tbl_Kulupler
+@{
+    ViewBag.Title = "KulupGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle","Kulupler",FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m=>m.KULUPAD)
+        @Html.TextBoxFor(m => m.KULUPAD, new { style = "color:red;border-radius:5px;background-color:#f2f2f2", @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m=>m.KULUPID)
+    <div style="margin-top:15px">
+        <button class="btn">Güncelle</button>
+    </div>
+}
+
+

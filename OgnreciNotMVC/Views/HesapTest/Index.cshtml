@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-align:center" style="text-align:center">Hesap Makinesi</h2>
+
+<br />
+
+@*<form class="form-group" method="post" style="align-items:center;text-align:center">
+    <div style="text-align:center;">
+       <div> Sayi1 :  <input  type="text" name="sayi1" id="sayi1" style="" /></div>
+        <div style="margin-top:10px">Sayi2: <input type="text" name="sayi2" id="sayi2" /> <br /></div>
+        <div style="margin-top:10px"><button class="btn" style="color:#ffffff">Hesapla</button>
+        Sonuç: @ViewBag.snc</div>
+    </div>
+
+</form>*@
+
+<link href="~/Dosyalar5Hesap/hesap.css" rel="stylesheet" />
+
+
+<form class="canculator" name="calc">
+    <input class="value" type="text" name="txt" readonly="" />
+    <span class="num clear" onclick="document.calc.txt.value =''">c</span>
+    <span class="num" onclick="document.calc.txt.value +='/'">/</span>
+    <span class="num" onclick="document.calc.txt.value +='*'">*</span>
+    <span class="num" onclick="document.calc.txt.value +='7'">7</span>
+    <span class="num" onclick="document.calc.txt.value +='8'">8</span>
+    <span class="num" onclick="document.calc.txt.value +='9'">9</span>
+    <span class="num" onclick="document.calc.txt.value +='-'">-</span>
+    <span class="num" onclick="document.calc.txt.value +='4'">4</span>
+    <span class="num" onclick="document.calc.txt.value +='5'">5</span>
+    <span class="num" onclick="document.calc.txt.value +='6'">6</span>
+    <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
+    <span class="num" onclick="document.calc.txt.value +='3'">3</span>
+    <span class="num" onclick="document.calc.txt.value +='2'">2</span>
+    <span class="num" onclick="document.calc.txt.value +='1'">1</span>
+    <span class="num" onclick="document.calc.txt.value +='0'">0</span>
+    <span class="num" onclick="document.calc.txt.value +='00'">00</span>
+    <span class="num" onclick="document.calc.txt.value +='.'">.</span>
+    <span class="num equal" onclick="document.calc.txt.value = eval(calc.txt.value)">=</span>
+</form>

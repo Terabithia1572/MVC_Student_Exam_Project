@@ -1,0 +1,56 @@
+* {
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Poppins',sans-serif;
+}
+
+body {
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:#091921;
+}
+
+.canculator {
+position:relative;
+display:grid;
+}
+.canculator .value {
+grid-column:span 4;
+height:100px;
+text-align:right;
+border:none;
+otuline:none;
+padding:10px;
+font-size:18px;
+}
+
+.canculator span {
+display:grid;
+width:60px;
+height:60px;
+color:#fff;
+background:0c2835;
+place-items:center;
+border: 1px solid rgba(0,0,0,.1);
+}
+
+.canculator span:active {
+background:#74ff3b;
+color:#111;
+}
+
+.canculator span.clear {
+grid-column:span 2;
+width:120px;
+background:#ff3077;
+}
+.canculator span.plus {
+grid-row:span 2;
+height:120px;
+}
+.canculator span.equal {
+background: #03b1ff;
+}
